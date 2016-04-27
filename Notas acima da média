@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+int main(){
+    setlocale(LC_ALL, "");
+
+    int i, n=0;
+    float nota[n], soma=0;
+
+    printf("Indique a quantidade de notas que serão informadas: ");
+    scanf("%d", &n);
+    for (i=0; i<n; i++){
+        printf("\nInforme a nota %d: ", i+1);
+        scanf ("%f", &nota[i]);
+        soma=soma+nota[i];
+    }
+ // system("cls");
+    printf ("--------------------\n\nA média das notas foi: %.2f\n", soma/5);
+    for (i=0; i<n; i++){
+        if (nota[i]>soma/n)
+            printf ("\nA nota %d foi acima da média. Nota = %.2f\n", i+1, nota[i]);
+    }
+    return 0;
+
+}
